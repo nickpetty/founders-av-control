@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- On page load, get current values of gains -->
+	<script type="text/javascript" src="../static/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../static/api.js"></script>
+	<script type="text/javascript" src="../static/controlsv2.js"></script>
+	<link rel="stylesheet" type="text/css" href="../static/style.css?v=37">		
+</head>
+
+<body>
+	<div id="header">
+		<center><div id="title"><font color="#ffffff">Founders AV Control</font></div></center>
+		<a href="/"><div id="volumePage"><center><div id="selector"><< Back</div></center></div></a>
+		<a href="/zones"><div id="zonesPage"><center><div id="selector">Zones >></div></center></div></a>
+	</div>
+	<div class="container">
+		<!-- <center><h1><font color="#ffffff">Music</font></h1></center> -->
+		<div id="ipod"></div>
+		<center>
+		<div id="chBtns">
+			<label><font color="white">Channel:</font><br><input type="text" id="channel"></input></label><br>
+			<div class=".row2">
+				<button class="chBtns" id="7" value="7" onclick="addText(7)">7</button>
+				<button class="chBtns" id="8" value="8" onclick="addText(8)">8</button>
+				<button class="chBtns" id="9" value="9" onclick="addText(9)">9</button>
+			</div>			
+			<div class=".row3">
+				<button class="chBtns" id="4" value="4" onclick="addText(4)">4</button>
+				<button class="chBtns" id="5" value="5" onclick="addText(5)">5</button>
+				<button class="chBtns" id="6" value="6" onclick="addText(6)">6</button>
+			</div>
+			<div class=".row4">
+				<button class="chBtns" id="1" value="1" onclick="addText(1)">1</button>
+				<button class="chBtns" id="2" value="2" onclick="addText(2)">2</button>
+				<button class="chBtns" id="3" value="3" onclick="addText(3)">3</button>
+			</div>
+			<div id=".row1">
+				<button class="chBtns" id="clear">CLR</button>
+				<button class="chBtns" id="0" value="0" onclick="addText(0)">0</button>				
+				<button class="chBtns" id="enter" onclick="submit()">GO</button>
+			</div>
+		</div>
+		</center>
+	</div>
+
+	<script type="text/javascript" src="../static/music.js"></script>	
+
+</body>
+</html>
