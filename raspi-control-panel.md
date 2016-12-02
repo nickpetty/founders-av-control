@@ -38,30 +38,32 @@ Enable SSH:
 
 
 
-Setting up Electron
--------------------
-	`https://www.fyears.org/2015/06/electron-as-gui-of-python-apps.html`
+Setting up Electron and Control Software
+----------------------------------------
+
+`https://www.fyears.org/2015/06/electron-as-gui-of-python-apps.html`
+
 ```
 sudo apt-get install npm
 curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 sudo apt-get install nodejs
 sudo npm install electron-prebuilt -g
 
-
+[In home directory (cd ~)]
+wget https://github.com/nickpetty/founders-av-control/archive/master.zip
+unzip master.zip
+cd founders-av-control-master/electron
 
 sudo npm install request
 sudo npm install request-promise
-```
 
+sudo apt-get install python-pip
+sudo pip install flask
 
+sudo apt-get install libxss1 libnss3
 
-Installing Control Software
----------------------------
-
-```
-[In home directory (cd ~)]
-wget https://github.com/nickpetty/founders-av-control/archive/master.zip
-uzip master.zip
+sudo apt-get install --no-install-recommends xserver-xorg (may be install already)
+sudo apt-get install --no-install-recommends xinit
 ```
 
 
