@@ -67,6 +67,19 @@ sudo apt-get install --no-install-recommends xinit
 ```
 
 
+Static IP
+---------
+
+	- sudo nano /etc/network/interfaces
+	- add:
+		iface eth0 inet static
+		address 192.168.1.100
+		netmask 255.255.255.0
+		network 192.168.1.1
+		broadcast 192.168.1.255
+		gateway 192.168.1.254
+
+
 
 Starting raspberry pi touch screen as control panel
 ---------------------------------------------------
@@ -79,11 +92,25 @@ Starting raspberry pi touch screen as control panel
 		- http://raspberrypi.stackexchange.com/questions/48241/auto-login-in-jessie-how
 
 
-	start server and X
-	------------------
+	Start Control Panel
+	-------------------
+		- sudo nano /etc/rc.local
+		- Add line before 'exit 0':
+			- su -s /bin/bash -c startx pi&
+
+		- sudo nano /etc/X11/Xwrapper.config
+		- change from 'console' to 'anybody'
+
+		- sudo nano ~/.xinitrc
+		- add 'electron ~/fonders-av-control-master/electron/'
+
 		- crontab -e
+		- 2 <return>
 		- ~@reboot screen -dm (detached mode) python ~/Desktop/electron-arm/web-based/main.py~
-		- @reboot startx[1]
+		- @reboot startx
+		- @reboot electron ~/founders-av-control-master/electron/
+		- CTRL-X
+		- Y <return>
 
 
 
@@ -95,14 +122,4 @@ Starting raspberry pi touch screen as control panel
 
 
 
-Static IP
----------
 
-	- sudo nano /etc/network/interfaces
-	- add:
-		iface eth0 inet static
-		address 192.168.1.100
-		netmask 255.255.255.0
-		network 192.168.1.1
-		broadcast 192.168.1.255
-		gateway 192.168.1.254

@@ -2,7 +2,7 @@ from flask import Flask, render_template, Response
 from bss import Blu
 from directv import DTV
 
-blu = Blu('192.168.1.20')
+#blu = Blu('192.168.1.20')
 
 app = Flask(__name__)
 dtv = DTV()
