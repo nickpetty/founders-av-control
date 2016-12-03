@@ -15,6 +15,7 @@ Setting up Raspberry Pi
 Login: 
 	`User: 'pi'`
 	`Password: 'raspberry'`
+	`passwd 'founders'`
 
 ```
 sudo apt-get update
@@ -31,9 +32,11 @@ Add line:
 	`lcd_rotate=2`
 
 Change Keyboard Layout (second comment):
+	`sudo raspi-config`
 	`https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=80127`
 
 Enable SSH:
+	`sudo raspi-config`
 	`http://www.raspberrypi-spy.co.uk/2012/05/enable-secure-shell-ssh-on-your-raspberry-pi/`
 
 
@@ -62,7 +65,7 @@ sudo pip install flask
 
 sudo apt-get install libxss1 libnss3
 
-sudo apt-get install --no-install-recommends xserver-xorg (may be install already)
+sudo apt-get install --no-install-recommends xserver-xorg (may be installed already)
 sudo apt-get install --no-install-recommends xinit
 ```
 
