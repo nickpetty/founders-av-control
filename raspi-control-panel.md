@@ -97,6 +97,25 @@ Starting raspberry pi touch screen as control panel
 
 	Start Control Panel
 	-------------------
+		# Frontend
+		-sudo nano /home/pi/.config/lxsession/LXDE-pi/autostart
+			- @/home/pi/Desktop/start.sh #Starts frontend client (electron)
+		
+
+		# Backend
+		-sudo nano /lib/systemd/system/startBackend.service
+		-sudo chmod 644 /lib/systemd/system/startBackend.service
+		-sudo systemctl enable startBackend.service
+
+
+		# Check status:
+		-sudo systemctl status startBackend.service
+
+
+
+
+
+
 		- sudo nano /etc/rc.local
 		- Add line before 'exit 0':
 			- su -s /bin/bash -c startx pi&

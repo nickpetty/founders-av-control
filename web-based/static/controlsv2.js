@@ -137,6 +137,19 @@ function VolumeControl(divID, header, volCallback, muteCallback) {
 			upBtn.src = "../static/img/up.png";
 			clearInterval(timer);
 		});
+
+		// Touch
+		upBtn.addEventListener("touchstart", function () {
+			upBtn.src = "../static/img/upPressed.png";
+			//console.log("up pressed");
+			hold('up');
+		});
+		upBtn.addEventListener("touchend", function () {
+			//console.log("up released");
+			upBtn.src = "../static/img/up.png";
+			clearInterval(timer);
+		});
+
 		upBtn.addEventListener("dragstart", function(e) {
     		var img = document.createElement("img");
     		img.src = "../static/blank.png";
@@ -154,6 +167,18 @@ function VolumeControl(divID, header, volCallback, muteCallback) {
 			hold('down');
 		});
 		downBtn.addEventListener("mouseup", function () {
+			//console.log("down released");
+			downBtn.src = "../static/img/down.png";
+			clearInterval(timer);
+		});
+
+		// Touch down
+		downBtn.addEventListener("touchstart", function () {
+			//console.log("down pressed");
+			downBtn.src = "../static/img/downPressed.png";
+			hold('down');
+		});
+		downBtn.addEventListener("touchend", function () {
 			//console.log("down released");
 			downBtn.src = "../static/img/down.png";
 			clearInterval(timer);
